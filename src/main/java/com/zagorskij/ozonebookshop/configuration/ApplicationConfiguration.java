@@ -10,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
-
 /**
  * Created by andrey on 09.06.2015.
  */
@@ -40,6 +39,4 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
         jaxb2Marshaller.setPackagesToScan(new String[]{"com.zagorskij.ozonebookshop.model"});
         return jaxb2Marshaller;
     }
-
-
 }
