@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ozonebookshop:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="ozonebookshop.war">
-      <element id="artifact" artifact-name="ozonebookshop:war exploded" />
-    </root>
-  </artifact>
-</component>
