@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="base.definition"  template="/WEB-INF/views/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/views/header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/views/menu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+    </definition>
+
+    <definition name="hello" extends="base.definition">
+        <put-attribute name="title" value="Welcome to our Shop" />
+        <put-attribute name="body" value="/WEB-INF/views/hello.jsp" />
+    </definition>
+
+    <definition name="uploadForm" extends="base.definition">
+        <put-attribute name="title" value="Add Data from URL" />
+        <put-attribute name="body" value="/WEB-INF/views/uploadForm.jsp" />
+    </definition>
+
+    <definition name="showFile" extends="base.definition">
+        <put-attribute name="title" value="Detail of a Data" />
+        <put-attribute name="body" value="/WEB-INF/views/showFile.jsp" />
+    </definition>
+
+    <definition name="listResult" extends="base.definition">
+        <put-attribute name="title" value="List book" />
+        <put-attribute name="body" value="/WEB-INF/views/listResult.jsp" />
+    </definition>
+
+    <definition name="book" extends="base.definition">
+        <put-attribute name="title" value="Book" />
+        <put-attribute name="body" value="/WEB-INF/views/book.jsp" />
+    </definition>
+
+    <definition name="clear" extends="base.definition">
+        <put-attribute name="title" value="Delete list" />
+        <put-attribute name="body" value="/WEB-INF/views/clear.jsp" />
+    </definition>
+</tiles-definitions>

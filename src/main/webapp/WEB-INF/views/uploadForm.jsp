@@ -5,9 +5,9 @@
 </head>
 
 <body>
-<h2>Spring MVC file upload example</h2>
+<h2>Upload catalog</h2>
         <form:form method="post" action="fileUpload">
-        Please select a file to upload : <label>
+        Please select file: <label>
             <input type="text" name="path"/>
         </label>
             <input type="submit" value="upload" />

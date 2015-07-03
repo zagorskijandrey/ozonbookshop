@@ -1,21 +1,20 @@
+//Created by andrey on 12.06.2015.
 package com.zagorskij.ozonebookshop.model;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import java.io.Serializable;
 
-/**
- * Created by andrey on 12.06.2015.
- */
+//Create the actual Offer Entity itself whose instances we will be working with in database.
 @Entity
 @Table(name="offer")
-public class Offer {
+public class Offer implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="offerId")
-    private int offerId;
-    @Column(name="URL")
-    private String URL;
+    @Column(name="numId")
+    private int numId;
+    @Column(name="bookId")
+    private int bookId;
     @Column(name="picture")
     private String picture;
     @Column(name="name")
@@ -29,18 +28,19 @@ public class Offer {
     @Column(name="author")
     private String author;
 
-    public int getOfferId(){
-        return offerId;
+    public int getNumId(){
+        return numId;
     }
-    public void setOfferId(int offerId){
-        this.offerId=offerId;
+    public void setNumId(int numId){
+        this.numId=numId;
     }
 
-    public String getURL() {
-        return URL;
+    @XmlAttribute(name="id")
+    public int getBookId(){
+        return bookId;
     }
-    public void setURL(String URL) {
-        this.URL = URL;
+    public void setBookId(int bookId){
+        this.bookId=bookId;
     }
 
     public String getPicture() {

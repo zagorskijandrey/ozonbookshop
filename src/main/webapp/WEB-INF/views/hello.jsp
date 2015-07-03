@@ -3,6 +3,6 @@
     <title>Hello Page</title>
 </head>
 <body>
-<h2>${msg}</h2>
+<p align="center"><h2>${msg}</h2></p>
 </body>
 </html>

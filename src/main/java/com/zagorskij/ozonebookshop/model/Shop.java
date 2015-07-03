@@ -1,10 +1,8 @@
+//Created by andrey on 28.06.2015.
 package com.zagorskij.ozonebookshop.model;
 
 import javax.xml.bind.annotation.XmlElement;
 
-/**
- * Created by andrey on 28.06.2015.
- */
 public class Shop {
     @XmlElement(name="name")
     private String name;

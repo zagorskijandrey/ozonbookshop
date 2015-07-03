@@ -1,11 +1,14 @@
+//Created by andrey on 16.06.2015.
 package com.zagorskij.ozonebookshop.dao;
 
 import com.zagorskij.ozonebookshop.model.Offer;
 
-/**
- * Created by andrey on 16.06.2015.
- */
+import java.util.List;
+//The DAO layer of Offer application consist of an interface OfferDAO and its corresponding
+// implementation class ContactDAOImpl.
 public interface OfferDao {
     void addOffer(Offer offer);
-    Offer get(int offerId);
+    Offer get(int numId);
+    List<Offer> findAllOffers();
+    void deleteAll(List<Offer> offer);
 }

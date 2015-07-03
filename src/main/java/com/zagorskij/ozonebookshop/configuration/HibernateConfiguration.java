@@ -1,3 +1,4 @@
+//Created by andrey on 09.06.2015.
 package com.zagorskij.ozonebookshop.configuration;
 
 
@@ -16,18 +17,21 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * Created by andrey on 09.06.2015.
- */
+//@Configuration indicates that this class contains one or more bean methods annotated with @Bean.
+//This class represent hibernate configuration.
 @Configuration
+//Enable annotation style of managing transactions
 @EnableTransactionManagement
+//@ComponentScan providing with where to look for spring managed beans/classes.
 @ComponentScan(value={"com.zagorskij.ozonebookshop.configuration"})
+//@PropertySource is used to declare a set of properties in Spring run-time Environment
 @PropertySource(value={"classpath:application.properties"})
 public class HibernateConfiguration {
 
     @Autowired
     private Environment environment;
 
+    //Declare the Hibernate SessionFactory for retrieving Hibernate sessions
     @Bean
     public LocalSessionFactoryBean sessionFactory(){
         LocalSessionFactoryBean sessionFactory= new LocalSessionFactoryBean();
@@ -55,6 +59,9 @@ public class HibernateConfiguration {
         return properties;
     }
 
+    //Once the SessionFactory is created, it will be injected into Bean method 'transactionManager'
+    // which may eventually provide transaction support for the sessions created by this
+    // sessionFactory.
     @Bean
     @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory s) {

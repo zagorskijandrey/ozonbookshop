@@ -1,12 +1,14 @@
+//Created by andrey on 16.06.2015.
 package com.zagorskij.ozonebookshop.dao;
 
+import com.zagorskij.ozonebookshop.model.Offer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * Created by andrey on 16.06.2015.
- */
+import java.util.List;
+
+//This class serve as base class for database related operations.
 public abstract class AbstractDao {
 
     @Autowired
@@ -19,7 +21,9 @@ public abstract class AbstractDao {
         getSession().saveOrUpdate(entity);
     }
 
-    public void update(Object entity){
-        getSession().update(entity);
-    }
+    /*public void clear(List<Object> entity){
+        for (Object e: entity){
+            getSession().delete(e);
+        }
+    }*/
 }
