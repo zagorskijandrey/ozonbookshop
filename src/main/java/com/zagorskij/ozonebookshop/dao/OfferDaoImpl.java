@@ -4,7 +4,9 @@ package com.zagorskij.ozonebookshop.dao;
 import com.zagorskij.ozonebookshop.model.Offer;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Projections;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
@@ -21,10 +23,11 @@ public class OfferDaoImpl extends AbstractDao implements OfferDao{
 
     //It's a warning by which the compiler indicates that it cannot ensure type safety.
     @SuppressWarnings("unchecked")
-    public List<Offer> findAllOffers(){
+    /*public List<Offer> findAllOffers(){
         Criteria criteria= (Criteria) getSession().createCriteria(Offer.class);
         return (List<Offer>) criteria.list();
     }
+    */
 
     public Offer get(int numId){
         return (Offer) getSession().get(Offer.class, numId);
@@ -34,5 +37,19 @@ public class OfferDaoImpl extends AbstractDao implements OfferDao{
         for (Offer of : offer) {
             getSession().delete(of);
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Offer> findPartOffers(Integer offset, Integer maxResults){
+        Criteria criteria=(Criteria) getSession().createCriteria(Offer.class)
+                .setFirstResult(offset != null ? offset : 0)
+                .setMaxResults(maxResults != null ? maxResults : 10);
+        return (List<Offer>) criteria.list();
+    }
+
+    public Integer count(){
+        Criteria criteria= (Criteria) getSession().createCriteria(Offer.class)
+                .setProjection(Projections.rowCount());
+        return (Integer) criteria.uniqueResult();
     }
 }

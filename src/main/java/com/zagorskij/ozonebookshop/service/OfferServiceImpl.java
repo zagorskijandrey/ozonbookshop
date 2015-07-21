@@ -20,9 +20,10 @@ public class OfferServiceImpl implements OfferService {
         offerDao.addOffer(offer);
     }
 
-    public List<Offer> findAllOffers(){
+    /*public List<Offer> findAllOffers(){
         return offerDao.findAllOffers();
     }
+    */
 
     public Offer get(int numId){
         return offerDao.get(numId);
@@ -30,5 +31,13 @@ public class OfferServiceImpl implements OfferService {
 
     public void deleteAll(List<Offer> offer){
         offerDao.deleteAll(offer);
+    }
+
+    public List<Offer> findPartOffers(Integer offset, Integer maxResults){
+        return offerDao.findPartOffers(offset,maxResults);
+    }
+
+    public Integer count(){
+        return offerDao.count();
     }
 }
