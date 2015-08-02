@@ -9,8 +9,8 @@ import java.util.List;
 public interface OfferDao {
     void addOffer(Offer offer);
     Offer get(int numId);
-    //List<Offer> findAllOffers();
+    List<Offer> findAllOffers();
     void deleteAll(List<Offer> offer);
-    List<Offer> findPartOffers(Integer offset, Integer maxResults);
-    Integer count();
+    List<Offer> findPartOffers();
+    Long count();
 }

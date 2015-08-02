@@ -18,7 +18,10 @@
 <body>
 <table>
     <tr>
-        <td><a class="thumb"> <img src="${offer.picture}" width="200" height="200"/></a></td>
+        <td><a class="thumb"> <img src="${offer.picture}" width="200" height="200"/>
+            <div class="rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div></a></td>
         <th valign="baseline"><font color="#6495ed">${offer.name}</font></br>
             <br><p>${offer.author} (${offer.year})</p></br>
             <br>${offer.ISBN}

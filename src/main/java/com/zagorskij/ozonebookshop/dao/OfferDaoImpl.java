@@ -23,11 +23,12 @@ public class OfferDaoImpl extends AbstractDao implements OfferDao{
 
     //It's a warning by which the compiler indicates that it cannot ensure type safety.
     @SuppressWarnings("unchecked")
-    /*public List<Offer> findAllOffers(){
+    public List<Offer> findAllOffers(){
         Criteria criteria= (Criteria) getSession().createCriteria(Offer.class);
+                //.setMaxResults(10);
         return (List<Offer>) criteria.list();
     }
-    */
+
 
     public Offer get(int numId){
         return (Offer) getSession().get(Offer.class, numId);
@@ -40,16 +41,16 @@ public class OfferDaoImpl extends AbstractDao implements OfferDao{
     }
 
     @SuppressWarnings("unchecked")
-    public List<Offer> findPartOffers(Integer offset, Integer maxResults){
+    public List<Offer> findPartOffers(){
         Criteria criteria=(Criteria) getSession().createCriteria(Offer.class)
-                .setFirstResult(offset != null ? offset : 0)
-                .setMaxResults(maxResults != null ? maxResults : 10);
+                .setFirstResult(0)
+                .setMaxResults(5);
         return (List<Offer>) criteria.list();
     }
 
-    public Integer count(){
+    public Long count(){
         Criteria criteria= (Criteria) getSession().createCriteria(Offer.class)
                 .setProjection(Projections.rowCount());
-        return (Integer) criteria.uniqueResult();
+        return (Long) criteria.uniqueResult();
     }
 }

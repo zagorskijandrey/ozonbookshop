@@ -17,6 +17,96 @@ body {
     line-height: 1.5;
 }
 
+/*#body li {list-style:  none; float:top}
+#body li a {
+    border-top:1px solid #3f5f74;
+    border-left:1px solid #3f5f74;
+    border-radius:6px;-moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    display: inline;
+    font-size:18px;
+    text-decoration:none;
+    color:#757272;
+    position: absolute;
+    line-height:37px;
+    padding:0 20px;
+    margin:0 1px 1px 0}
+#body li a:hover {
+    color:#3a5b70;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    color:#254117;
+    border-bottom:1px solid #3f5f74;
+    border-right:1px solid #3f5f74;
+    margin:0}*/
+/*.pagination{
+    margin: 2px 6px;
+    list-style: none outside none;
+}
+.pagination li {
+    float: left;
+    padding: 2px 4px;
+    font-size: 1.2em;
+}*/
+
+/* Pagination
+---------------------------------------- */
+.pagingItem {
+    font-weight: normal;
+    text-decoration: none;
+    color: #747474;
+    margin: 0 2px;
+    padding: 0 2px;
+    background-color: #eeeeee;
+    border: 1px solid #bababa;
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+.pagingItemCurrent {
+    padding: 0 2px;
+    margin: 0 2px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #bfbfbf;
+    border: 1px solid #bfbfbf;
+    font-size: 0.9em;
+}
+
+.pagingDots {
+    font-weight: normal;
+}
+
+.pagination span a:hover {
+    border-color: #d2d2d2;
+    background-color: #d2d2d2;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.pagination img {
+    vertical-align: middle;
+}
+
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    color:#FFD700;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+}
+
+
 #header {
     background: url(../images/bookshop.jpg) no-repeat right top;
     background-size: Auto 80%;
@@ -37,7 +127,6 @@ body {
     width: 200px;
     background: #BDBDBD;
 }
-
 #menu li {list-style: none; float:left}
 #menu li a {
     border-top:1px solid #3f5f74;

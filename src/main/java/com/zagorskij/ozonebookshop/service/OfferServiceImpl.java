@@ -4,6 +4,7 @@ package com.zagorskij.ozonebookshop.service;
 import com.zagorskij.ozonebookshop.dao.OfferDao;
 import com.zagorskij.ozonebookshop.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -20,10 +21,10 @@ public class OfferServiceImpl implements OfferService {
         offerDao.addOffer(offer);
     }
 
-    /*public List<Offer> findAllOffers(){
+    public List<Offer> findAllOffers(){
         return offerDao.findAllOffers();
     }
-    */
+
 
     public Offer get(int numId){
         return offerDao.get(numId);
@@ -33,11 +34,11 @@ public class OfferServiceImpl implements OfferService {
         offerDao.deleteAll(offer);
     }
 
-    public List<Offer> findPartOffers(Integer offset, Integer maxResults){
-        return offerDao.findPartOffers(offset,maxResults);
+    public List<Offer> findPartOffers(){
+        return offerDao.findPartOffers();
     }
 
-    public Integer count(){
+    public Long count(){
         return offerDao.count();
     }
 }

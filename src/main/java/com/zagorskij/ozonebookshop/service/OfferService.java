@@ -2,6 +2,7 @@
 package com.zagorskij.ozonebookshop.service;
 
 import com.zagorskij.ozonebookshop.model.Offer;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 
@@ -9,9 +10,9 @@ import java.util.List;
 // implementation class OfferServiceImpl.
 public interface OfferService {
     void addOffer(Offer offer);
-    //List<Offer> findAllOffers();
+    List<Offer> findAllOffers();
     Offer get(int numId);
     void deleteAll(List<Offer> offer);
-    List<Offer> findPartOffers(Integer offset, Integer maxResults);
-    Integer count();
+    List<Offer> findPartOffers();
+    Long count();
 }

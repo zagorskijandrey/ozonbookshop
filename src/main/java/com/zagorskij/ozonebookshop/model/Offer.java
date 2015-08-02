@@ -27,6 +27,8 @@ public class Offer implements Serializable{
     private String description;
     @Column(name="author")
     private String author;
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "offer", cascade = CascadeType.ALL)
+    private Rating rating;
 
     public int getNumId(){
         return numId;
@@ -85,4 +87,10 @@ public class Offer implements Serializable{
         this.author=author;
     }
 
+    public Rating getRating() {
+        return rating;
+    }
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
 }
