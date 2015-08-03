@@ -2,6 +2,7 @@
 package com.zagorskij.ozonebookshop.dao;
 
 import com.zagorskij.ozonebookshop.model.Offer;
+import com.zagorskij.ozonebookshop.model.Rating;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Projections;
@@ -25,10 +26,8 @@ public class OfferDaoImpl extends AbstractDao implements OfferDao{
     @SuppressWarnings("unchecked")
     public List<Offer> findAllOffers(){
         Criteria criteria= (Criteria) getSession().createCriteria(Offer.class);
-                //.setMaxResults(10);
         return (List<Offer>) criteria.list();
-    }
-
+        }
 
     public Offer get(int numId){
         return (Offer) getSession().get(Offer.class, numId);
@@ -38,19 +37,5 @@ public class OfferDaoImpl extends AbstractDao implements OfferDao{
         for (Offer of : offer) {
             getSession().delete(of);
         }
-    }
-
-    @SuppressWarnings("unchecked")
-    public List<Offer> findPartOffers(){
-        Criteria criteria=(Criteria) getSession().createCriteria(Offer.class)
-                .setFirstResult(0)
-                .setMaxResults(5);
-        return (List<Offer>) criteria.list();
-    }
-
-    public Long count(){
-        Criteria criteria= (Criteria) getSession().createCriteria(Offer.class)
-                .setProjection(Projections.rowCount());
-        return (Long) criteria.uniqueResult();
     }
 }

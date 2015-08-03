@@ -11,6 +11,4 @@ public interface OfferDao {
     Offer get(int numId);
     List<Offer> findAllOffers();
     void deleteAll(List<Offer> offer);
-    List<Offer> findPartOffers();
-    Long count();
 }
