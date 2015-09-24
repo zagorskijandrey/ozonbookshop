@@ -1,5 +1,5 @@
 //Created by andrey on 09.06.2015.
-package com.zagorskij.ozonebookshop.configuration;
+package com.zagorskij.ozonbookshop.configuration;
 
 
 import org.hibernate.SessionFactory;
@@ -23,7 +23,7 @@ import java.util.Properties;
 //Enable annotation style of managing transactions
 @EnableTransactionManagement
 //@ComponentScan providing with where to look for spring managed beans/classes.
-@ComponentScan(value={"com.zagorskij.ozonebookshop.configuration"})
+@ComponentScan(value={"com.zagorskij.ozonbookshop.configuration"})
 //@PropertySource is used to declare a set of properties in Spring run-time Environment
 @PropertySource(value={"classpath:application.properties"})
 public class HibernateConfiguration {
@@ -36,7 +36,7 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory(){
         LocalSessionFactoryBean sessionFactory= new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.zagorskij.ozonebookshop.model" });
+        sessionFactory.setPackagesToScan(new String[] { "com.zagorskij.ozonbookshop.model" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

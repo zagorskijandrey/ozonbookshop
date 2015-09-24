@@ -1,7 +1,7 @@
-package com.zagorskij.ozonebookshop.service;
+package com.zagorskij.ozonbookshop.service;
 
-import com.zagorskij.ozonebookshop.dao.RatingDao;
-import com.zagorskij.ozonebookshop.model.Rating;
+import com.zagorskij.ozonbookshop.dao.RatingDao;
+import com.zagorskij.ozonbookshop.model.Rating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +16,12 @@ public class RatingServiceImpl implements RatingService {
     private RatingDao ratingDao;
 
     @Override
-    public void addRating(Rating rating) {
-        ratingDao.addRating(rating);
+    public void addOrUpdateRating(Rating rating) {
+        ratingDao.addOrUpdateRating(rating);
+    }
+
+    @Override
+    public Rating getRating(int offerId) {
+        return ratingDao.getRating(offerId);
     }
 }

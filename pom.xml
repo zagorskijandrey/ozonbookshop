@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zagorskij.ozonebookshop</groupId>
-    <artifactId>ozonebookshop</artifactId>
+    <groupId>com.zagorskij.ozonbookshop</groupId>
+    <artifactId>ozonbookshop</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>ozonebookshop Maven Webapp</name>
+    <name>ozonbookshop Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>
@@ -114,6 +114,45 @@
             <artifactId>struts2-spring-plugin</artifactId>
             <version>2.2.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>1.5.2.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
     </dependencies>
     <build>
         <pluginManagement>
@@ -124,13 +163,13 @@
                     <version>2.4</version>
                     <configuration>
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
-                        <warName>ozonebookshop</warName>
+                        <warName>ozonbookshop</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
-        <finalName>ozonebookshop</finalName>
+        <finalName>ozonbookshop</finalName>
     </build>
     <distributionManagement>   <!--Исправил ошибку добавил весь кусок-->
         <repository>

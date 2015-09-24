@@ -1,5 +1,5 @@
 //Created by andrey on 28.06.2015.
-package com.zagorskij.ozonebookshop.model;
+package com.zagorskij.ozonbookshop.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.util.List;

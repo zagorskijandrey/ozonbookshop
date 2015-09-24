@@ -1,5 +1,5 @@
 //Created by andrey on 09.06.2015.
-package com.zagorskij.ozonebookshop.configuration;
+package com.zagorskij.ozonbookshop.configuration;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;

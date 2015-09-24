@@ -1,7 +1,9 @@
-package com.zagorskij.ozonebookshop.controller;
+package com.zagorskij.ozonbookshop.controller;
 
-import com.zagorskij.ozonebookshop.model.Offer;
-import com.zagorskij.ozonebookshop.service.OfferService;
+import com.zagorskij.ozonbookshop.model.Offer;
+import com.zagorskij.ozonbookshop.model.Rating;
+import com.zagorskij.ozonbookshop.service.OfferService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
@@ -21,18 +23,20 @@ import java.util.List;
  */
 @Controller
 public class ViewOfferController {
+    private static final Logger logger = Logger.getLogger(ViewOfferController.class);
     @Autowired
     private OfferService offerService;
 
     //This method will find an offer by it's numId value.
-    @RequestMapping(value="/book/{numId}", method =RequestMethod.GET)
-    public String findBookForId(@PathVariable("numId") int numId,
+    @RequestMapping(value="/book/{offerId}", method ={RequestMethod.GET})
+    public String findBookForId(@PathVariable("offerId") int offerId,
                                 @ModelAttribute("offer") Offer offer, ModelMap model){
         try{
-            offer = offerService.get(numId);
+            offer = offerService.get(offerId);
             model.addAttribute("offer", offer);
+            model.addAttribute("rating", new Rating());
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("Error!", e);
         }
         return "book";
     }
@@ -46,7 +50,7 @@ public class ViewOfferController {
             offerService.deleteAll(offers);
             model.addAttribute("delete", offers);
         } catch (Exception e){
-            e.printStackTrace();
+            logger.error("Error!", e);
         }
         return "clear";
     }
@@ -64,7 +68,7 @@ public class ViewOfferController {
             model.addAttribute("pagedListHolder", pagedListHolder);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error!", e);
         }
         return "listResult";
     }

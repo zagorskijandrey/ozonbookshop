@@ -1,8 +1,8 @@
 //Created by andrey on 20.06.2015.
-package com.zagorskij.ozonebookshop.controller;
+package com.zagorskij.ozonbookshop.controller;
 
-import com.zagorskij.ozonebookshop.service.OfferService;
-import com.zagorskij.ozonebookshop.unmarshal.ProcessUnmarshaller;
+import com.zagorskij.ozonbookshop.service.OfferService;
+import com.zagorskij.ozonbookshop.unmarshal.ProcessUnmarshaller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

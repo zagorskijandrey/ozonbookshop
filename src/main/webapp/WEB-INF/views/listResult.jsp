@@ -33,7 +33,7 @@
             <td bgcolor="#CCC" style="padding:15px" width="300">${offer.name}</td>
             <td style="padding:15px" width="100">${offer.author}</td>
             <td bgcolor="#CCC" style="padding:15px" width="60">${offer.year}</td>
-            <td><a href="<c:url value='/book/${offer.numId}' />" >details</a></td>
+            <td><a href="<c:url value='/book/${offer.offerId}' />" >details</a>
         </tr>
     </c:forEach>
 </table>

@@ -1,5 +1,5 @@
 //Created by andrey on 20.06.2015.
-package com.zagorskij.ozonebookshop.controller;
+package com.zagorskij.ozonbookshop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

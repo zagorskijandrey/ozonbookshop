@@ -1,7 +1,7 @@
 //Created by andrey on 09.06.2015.
-package com.zagorskij.ozonebookshop.configuration;
+package com.zagorskij.ozonbookshop.configuration;
 
-import com.zagorskij.ozonebookshop.unmarshal.ProcessUnmarshaller;
+import com.zagorskij.ozonbookshop.unmarshal.ProcessUnmarshaller;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 //@EnableWebMVC and @ComponentScan are somewhat self explanatory and required for Spring to
 // find and configure all annotated classes.
 @EnableWebMvc
-@ComponentScan(basePackages="com.zagorskij.ozonebookshop")
+@ComponentScan(basePackages="com.zagorskij.ozonbookshop")
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
     //Method viewResolver configures a view resolver to identify the real view.
@@ -71,14 +71,15 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
     @Bean
     public Jaxb2Marshaller jaxb2Marshaller(){
         Jaxb2Marshaller jaxb2Marshaller= new Jaxb2Marshaller();
-        jaxb2Marshaller.setPackagesToScan(new String[]{"com.zagorskij.ozonebookshop.model"});
+        jaxb2Marshaller.setPackagesToScan(new String[]{"com.zagorskij.ozonbookshop.model"});
         return jaxb2Marshaller;
     }
 
     //In ‘addResourceHandlers()’ an instruction to Spring is given that when it sees a URL
-    // beginning with “resources/**”  (images, CSS etc.)
+    // beginning with “resources/**”  (images,JS, CSS etc.)
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/")
+                .setCachePeriod(31556926);
     }
 }

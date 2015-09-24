@@ -17,41 +17,7 @@ body {
     line-height: 1.5;
 }
 
-/*#body li {list-style:  none; float:top}
-#body li a {
-    border-top:1px solid #3f5f74;
-    border-left:1px solid #3f5f74;
-    border-radius:6px;-moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    display: inline;
-    font-size:18px;
-    text-decoration:none;
-    color:#757272;
-    position: absolute;
-    line-height:37px;
-    padding:0 20px;
-    margin:0 1px 1px 0}
-#body li a:hover {
-    color:#3a5b70;
-    border-radius:6px;
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    color:#254117;
-    border-bottom:1px solid #3f5f74;
-    border-right:1px solid #3f5f74;
-    margin:0}*/
-/*.pagination{
-    margin: 2px 6px;
-    list-style: none outside none;
-}
-.pagination li {
-    float: left;
-    padding: 2px 4px;
-    font-size: 1.2em;
-}*/
-
-/* Pagination
----------------------------------------- */
+/* Pagination---------------------------------------- */
 .pagingItem {
     font-weight: normal;
     text-decoration: none;
@@ -88,23 +54,54 @@ body {
 .pagination img {
     vertical-align: middle;
 }
+/*---------------------------------------- */
 
 
-.rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-}
-.rating > span {
-    display: inline-block;
+
+/* Rating---------------------------------------- */
+.stars{
+    width: 130px;
+    height: 26px;
+    background: url(http://sandbox.bumbu.ru/ui/external/stars.png) 0 0 repeat-x;
     position: relative;
-    width: 1.1em;
-    color:#FFD700;
 }
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-    content: "\2605";
+
+.stars .rating{
+    height: 26px;
+    background: url(http://sandbox.bumbu.ru/ui/external/stars.png) 0 -26px repeat-x;
+}
+
+.stars input{
+    display: none;
+}
+
+.stars label{
+    display: none;
     position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    width: 130px;
+    cursor: pointer;
 }
+.stars:hover label{
+    display: block;
+}
+.stars label:hover{
+    background: url(http://sandbox.bumbu.ru/ui/external/stars.png) 0 -52px repeat-x;
+}
+
+.stars label + input + label{width: 104px;}
+.stars label + input + label + input + label{width: 78px;}
+.stars label + input + label + input + label + input + label{width: 52px;}
+.stars label + input + label + input + label + input + label + input + label{width: 26px;}
+
+.stars input:checked + label{
+    display: block;
+    background: url(http://sandbox.bumbu.ru/ui/external/stars.png) 0 -52px repeat-x;
+}
+/*---------------------------------------- */
+
 
 
 #header {

@@ -1,10 +1,9 @@
 //Created by andrey on 16.06.2015.
-package com.zagorskij.ozonebookshop.service;
+package com.zagorskij.ozonbookshop.service;
 
-import com.zagorskij.ozonebookshop.dao.OfferDao;
-import com.zagorskij.ozonebookshop.model.Offer;
+import com.zagorskij.ozonbookshop.dao.OfferDao;
+import com.zagorskij.ozonbookshop.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -25,20 +24,11 @@ public class OfferServiceImpl implements OfferService {
         return offerDao.findAllOffers();
     }
 
-
-    public Offer get(int numId){
-        return offerDao.get(numId);
+    public Offer get(int offerId){
+        return offerDao.get(offerId);
     }
 
     public void deleteAll(List<Offer> offer){
         offerDao.deleteAll(offer);
-    }
-
-    public List<Offer> findPartOffers(){
-        return offerDao.findPartOffers();
-    }
-
-    public Long count(){
-        return offerDao.count();
     }
 }

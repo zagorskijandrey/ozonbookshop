@@ -1,8 +1,7 @@
 //Created by andrey on 16.06.2015.
-package com.zagorskij.ozonebookshop.service;
+package com.zagorskij.ozonbookshop.service;
 
-import com.zagorskij.ozonebookshop.model.Offer;
-import org.springframework.data.domain.PageRequest;
+import com.zagorskij.ozonbookshop.model.Offer;
 
 import java.util.List;
 
@@ -11,8 +10,6 @@ import java.util.List;
 public interface OfferService {
     void addOffer(Offer offer);
     List<Offer> findAllOffers();
-    Offer get(int numId);
+    Offer get(int offerId);
     void deleteAll(List<Offer> offer);
-    List<Offer> findPartOffers();
-    Long count();
 }

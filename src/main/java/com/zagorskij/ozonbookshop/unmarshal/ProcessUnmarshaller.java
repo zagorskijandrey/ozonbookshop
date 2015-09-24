@@ -1,11 +1,11 @@
 //Created by andrey on 14.06.2015.
-package com.zagorskij.ozonebookshop.unmarshal;
+package com.zagorskij.ozonbookshop.unmarshal;
 
-import com.zagorskij.ozonebookshop.model.Offer;
-import com.zagorskij.ozonebookshop.model.Offers;
-import com.zagorskij.ozonebookshop.model.Shop;
-import com.zagorskij.ozonebookshop.model.YmlCatalog;
-import com.zagorskij.ozonebookshop.service.OfferService;
+import com.zagorskij.ozonbookshop.model.Offer;
+import com.zagorskij.ozonbookshop.model.Offers;
+import com.zagorskij.ozonbookshop.model.Shop;
+import com.zagorskij.ozonbookshop.model.YmlCatalog;
+import com.zagorskij.ozonbookshop.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.Unmarshaller;
 

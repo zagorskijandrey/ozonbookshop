@@ -1,5 +1,5 @@
 //Created by andrey on 12.06.2015.
-package com.zagorskij.ozonebookshop.model;
+package com.zagorskij.ozonbookshop.model;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -11,8 +11,8 @@ import java.io.Serializable;
 public class Offer implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="numId")
-    private int numId;
+    @Column(name="offerId")
+    private int offerId;
     @Column(name="bookId")
     private int bookId;
     @Column(name="picture")
@@ -28,11 +28,11 @@ public class Offer implements Serializable{
     @Column(name="author")
     private String author;
 
-    public int getNumId(){
-        return numId;
+    public int getOfferId(){
+        return offerId;
     }
-    public void setNumId(int numId){
-        this.numId=numId;
+    public void setOfferId(int offerId){
+        this.offerId=offerId;
     }
 
     @XmlAttribute(name="id")
