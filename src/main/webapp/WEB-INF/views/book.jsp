@@ -15,7 +15,7 @@
             margin-bottom: 10px; /* Отступ снизу */
         }
     </style>
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
     <script src="<c:url value="/resources/ajax/ajax.js" />" type="text/javascript" ></script>
 </head>
 <body>
@@ -23,7 +23,7 @@
     <tr>
         <td><a class="thumb"> <img src="${offer.picture}" width="200" height="200"/></a>
 
-            <form id="formToSend" action="/book/{offerId}" method="post">
+            <form id="formToSend" action="${pageContext.request.contextPath}/book/${offer.offerId}" method="post">
             <div class="stars">
                 <div class="rating" style="width:0%"></div>
                 <input type="radio" name="ratValue" id="star5" value="5" onclick="doAjaxPost()">

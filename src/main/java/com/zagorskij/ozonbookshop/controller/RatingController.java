@@ -1,5 +1,6 @@
 package com.zagorskij.ozonbookshop.controller;
 
+import com.mysql.fabric.Response;
 import com.zagorskij.ozonbookshop.model.Offer;
 import com.zagorskij.ozonbookshop.model.Rating;
 import com.zagorskij.ozonbookshop.service.OfferService;
@@ -13,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 /**
@@ -29,11 +31,10 @@ public class RatingController {
     private RatingService ratingService;
 
 
-    @RequestMapping(value = "/book/{offerId}", method = RequestMethod.POST/*,
-            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE*/)
-    public @ResponseBody String  setRating(@PathVariable("offerId") int offerId,
+    @RequestMapping(value = "/book/{offerId}", method = RequestMethod.POST,produces="application/json")
+    public @ResponseBody String setRating(@PathVariable("offerId") int offerId,
                                           @ModelAttribute("rating") Rating rating,
-                                          @RequestParam("ratValue") int ratValue) {
+                                          @RequestParam(value="ratValue", required=false) int ratValue) {
 
         String returnText = null;
         try {
@@ -62,6 +63,7 @@ public class RatingController {
         } catch (Exception e) {
             logger.error("Error!", e);
         }
-            return returnText;
+
+          return returnText;
     }
 }
