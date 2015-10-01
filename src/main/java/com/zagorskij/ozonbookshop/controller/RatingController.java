@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,10 +32,10 @@ public class RatingController {
     private RatingService ratingService;
 
 
-    @RequestMapping(value = "/book/{offerId}", method = RequestMethod.POST,produces="application/json")
-    public @ResponseBody String setRating(@PathVariable("offerId") int offerId,
+    @RequestMapping(value = "/book/rating/{offerId}", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+    public /*@ResponseBody String*/ModelAndView setRating(@PathVariable("offerId") int offerId,
                                           @ModelAttribute("rating") Rating rating,
-                                          @RequestParam(value="ratValue", required=false) int ratValue) {
+                                          @RequestParam(value="ratValue") int ratValue) {
 
         String returnText = null;
         try {
@@ -50,7 +51,7 @@ public class RatingController {
                 rating.setCount(newCount);
                 ratingService.addOrUpdateRating(rating);
                 returnText = "You are " + rating.getCount() + " user who gave the vote for this offer. Thank you!";
-
+                logger.debug("Rating add!");
             } else {
                 rating.setOffer(of);
                 rating.setCount(count);
@@ -58,12 +59,13 @@ public class RatingController {
                 rating.setRatValue(ratValue);
                 ratingService.addOrUpdateRating(rating);
                 returnText = "You are first user who gave the vote for this offer. Thank you!";
+                logger.debug("First rating add!");
             }
 
         } catch (Exception e) {
             logger.error("Error!", e);
         }
 
-          return returnText;
+          return /*returnText*/ new ModelAndView("redirect:/book/{offerId}");
     }
 }

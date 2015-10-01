@@ -15,7 +15,7 @@
             margin-bottom: 10px; /* Отступ снизу */
         }
     </style>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="<c:url value="/resources/ajax/ajax.js" />" type="text/javascript" ></script>
 </head>
 <body>
@@ -23,23 +23,22 @@
     <tr>
         <td><a class="thumb"> <img src="${offer.picture}" width="200" height="200"/></a>
 
-            <form id="formToSend" action="${pageContext.request.contextPath}/book/${offer.offerId}" method="post">
+            <form id="formToSend" action="/book/rating/${offer.offerId}" method="post">
             <div class="stars">
                 <div class="rating" style="width:0%"></div>
-                <input type="radio" name="ratValue" id="star5" value="5" onclick="doAjaxPost()">
+                <input type="radio" name="ratValue" id="star5" value="5" onclick="doAjaxPost()"/>
                 <label for="star5"></label>
-                <input type="radio" name="ratValue" id="star4" value="4" onclick="doAjaxPost()">
+                <input type="radio" name="ratValue" id="star4" value="4" onclick="doAjaxPost()"/>
                 <label for="star4"></label>
-                <input type="radio" name="ratValue" id="star3" value="3" onclick="doAjaxPost()">
+                <input type="radio" name="ratValue" id="star3" value="3" onclick="doAjaxPost()"/>
                 <label for="star3"></label>
-                <input type="radio" name="ratValue" id="star2" value="2" onclick="doAjaxPost()">
+                <input type="radio" name="ratValue" id="star2" value="2" onclick="doAjaxPost()"/>
                 <label for="star2"></label>
-                <input type="radio" name="ratValue" id="star1" value="1" onclick="doAjaxPost()">
+                <input type="radio" name="ratValue" id="star1" value="1" onclick="doAjaxPost()"/>
                 <label for="star1"></label>
                 </div>
             </form>
-
-            <p id="returnResult"></p>
+            <div id="returnResult"></div>
 
 
         <th valign="baseline"><font color="#6495ed">${offer.name}</font></br>
